@@ -21,3 +21,11 @@ curl --location '{{domain}}/get_results' \
 <p float = "left">
   <img src="fulhaus-architecture.jpeg" width = 400 >
 </p>
+
+The user interacts with the REST service, by uploading the image.
+
+The REST service logs the request in a metadata table to maintian the requests made to the service, along with other statistics from the Model.
+
+The image uploaded by the user can be added to the training set, an additional step is required to annotate the data with a label.
+
+The model training can be scheduled using Apache Airflow, with Spark jobs training the model.

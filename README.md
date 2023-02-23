@@ -19,5 +19,5 @@ curl --location '{{domain}}/get_results' \
 ### System Design
 
 <p float = "left">
-  <img src="readme_images/fulhaus-architecture.jpeg" width = 400 >
+  <img src="fulhaus-architecture.jpeg" width = 400 >
 </p>

@@ -13,7 +13,7 @@
 4. Once the Flask app is running, make a POST request with the image file
 
 ```
-curl --location '{{domain}}/get_results' \
+curl --location '{{local_docker_host}}/get_results' \
 --form 'file=@"{{image_file}}"'
 ```
 

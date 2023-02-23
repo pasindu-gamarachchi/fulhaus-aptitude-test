@@ -1,6 +1,6 @@
 # fulhaus-aptitude-test
 
-Deployment and Testing Instructions
+### Deployment and Testing Instructions
 
 1. Please cone the repository 
 2. Change the directory to the root of this repository
@@ -15,3 +15,9 @@ Deployment and Testing Instructions
 curl --location '{{domain}}/get_results' \
 --form 'file=@"{{image_file}}"'
 ```
+
+### System Design
+
+<p float = "left">
+  <img src="readme_images/fulhaus-architecture.jpeg" width = 400 >
+</p>

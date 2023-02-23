@@ -5,7 +5,7 @@ from flask import request
 from werkzeug.utils import secure_filename
 import logging
 from fulhaus_app.app_helper.app_helper import AppHelper
-
+from fulhaus_app.classifier_nn.classifier_NN import classifierNN
 
 @app.route("/")
 def home():
@@ -21,11 +21,16 @@ def get_results():
             image_file = request.files['file']
             if image_file.filename == "":
                 filename = helper.gen_filename()
-                helper.save_image(image_file, filename, False)
+                saved_file = helper.save_image(image_file, filename, False)
             else:
-                helper.save_image(image_file, image_file.filename)
+                saved_file = helper.save_image(image_file, image_file.filename)
+
+            furnitureClassifier = classifierNN()
+            saved_img = furnitureClassifier.read_image(saved_file)
+            furniture_type = furnitureClassifier.predict_furniture(saved_img)
+            result = f"That is a {furniture_type}"
         except Exception as err:
             logging.error(f"{err} getting results.")
             return {"is_error": True}, 400
 
-    return {}, 200
+    return {"Message": result}, 200

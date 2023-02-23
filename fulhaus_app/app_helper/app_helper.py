@@ -18,6 +18,8 @@ class AppHelper:
             default_ext = os.getenv("DEFAULT_IMAGE_EXT", ".png")
             filename = f"{filename}{default_ext}"
         logging.info(f"OS path : {os.path}")
-        image.save(f'fulhaus_app/images/{filename}')
+        saved_path = f'fulhaus_app/images/{filename}'
+        image.save(saved_path)
         logging.info(f"Saved {filename}")
         logging.info(f"{os.listdir('/fulhaus_app/images/')}")
+        return saved_path

@@ -2,7 +2,7 @@
 
 ### Deployment and Testing Instructions
 
-1. Please cone the repository 
+1. Please clone the repository 
 2. Change the directory to the root of this repository
 3. Use the docker-compose.yaml file to build and run the docker image
 <br /><br />
@@ -19,7 +19,7 @@ curl --location '{{local_docker_host}}/get_results' \
 ### Notes
 * The model was trained outside the Flask app and loaded into the Docker container
 * I could not get the CI/CD pipeline functioning, the goal was to build and push a new image to DockerHub for every commit to the master branch.
-* The CI/CD pipeline could be setup to push an image to a container registry such as Azure AKS, and the image can be used with an orchestration tool such as Kubernetes to deploy the Flask as a Service.
+* The CI/CD pipeline could be setup to push an image to a container registry such as Azure AKS, and the image can be used with an orchestration tool such as Kubernetes to deploy the Flask app as a Service.
 
 
 ### Suggested System Design
